@@ -2,7 +2,7 @@ nosex=0;
 nosey=0;
 function preload()
 {
-    clown_nose=loadImage('https://i.postimg.cc/P5BXMdh7/mustache.png');
+    mustach.png=loadImage('https://i.postimg.cc/P5BXMdh7/mustache.png');
 }
 function setup()
 { 
@@ -21,7 +21,7 @@ function draw()
     Fill(255,0,0);
     stroke(255,0,0);
     circle(nosex,nosey,20);
-    image(clown_nose,nosex,nosey,30,30);
+    image(mustach.png,nosex,nosey,30,30);
 }
 function take_snapshot()
 {
@@ -36,8 +36,8 @@ function gotpose(results)
     if(results.length>0)
     {
         console.log(results);
-        console.log("nosex="+results[0].pose.nose-x);
-        console.log("nosey="+results[0].pose.nose-y);
+        nosex=+results[0].pose.nose-x;
+        nosey=+results[0].pose.nose-y-15;
         console.log("nosex="+nosex);
         console.log("nosey="+nosey);
     }
